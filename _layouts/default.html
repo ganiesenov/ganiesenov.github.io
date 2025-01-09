@@ -2,25 +2,34 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>{{ page.title }}</title>
+    <title>{{ site.title }}</title>
     <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 <body>
-    <header>
-        <h1><a href="/">{{ site.title }}</a></h1>
-        <nav>
-            <a href="/">Home</a>
-            <a href="/about">About</a>
-            <a href="/projects">Projects</a>
-        </nav>
+    <header class="wrapper-masthead">
+        <div class="container">
+            <div class="site-info">
+                <h1 class="site-name"><a href="/">{{ site.title }}</a></h1>
+                <p class="site-description">{{ site.description }}</p>
+            </div>
+            <nav>
+                <a href="/">Home</a>
+                <a href="/about">About</a>
+                <a href="/projects">Projects</a>
+            </nav>
+        </div>
     </header>
 
-    <main>
-        {{ content }}
-    </main>
+    <div class="wrapper-main">
+        <div class="container">
+            {{ content }}
+        </div>
+    </div>
 
     <footer>
-        <p>© {{ site.time | date: '%Y' }} {{ site.author }}</p>
+        <div class="container">
+            <p>&copy; {{ site.time | date: '%Y' }} {{ site.author }}</p>
+        </div>
     </footer>
 </body>
 </html>
