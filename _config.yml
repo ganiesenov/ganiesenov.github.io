@@ -1,0 +1,19 @@
+title: Study and Blog
+description: Self-study and blog every day
+author: Your Name
+
+# URLs
+url: "https://ganiesenov.github.io"
+baseurl: ""
+
+# Social links
+github_username: ganiesenov
+linkedin_username: your-linkedin
+email: ganiesenov@gmail.com
+
+# Build settings
+markdown: kramdown
+permalink: /:title/
+paginate: 6
+
+theme: minima
