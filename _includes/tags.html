@@ -1,0 +1,7 @@
+{% if page.tags.size > 0 %}
+<div class="post-tags">
+    {% for tag in page.tags %}
+        <a href="{{ site.baseurl }}/tags/{{ tag }}" class="tag">{{ tag }}</a>
+    {% endfor %}
+</div>
+{% endif %}

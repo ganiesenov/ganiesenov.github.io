@@ -2,7 +2,7 @@
 layout: default
 ---
 
-# 🔥2024 Learn + Blog EVERY DAY for 366 days!💻
+# 🔥2025 Learn + Blog EVERY DAY for 366 days!💻
 
 ## Math, Stats, AI, Data Eng, MLOps!
 

@@ -1,0 +1,14 @@
+---
+layout: default
+---
+<div class="posts-by-tag">
+    <h1>Posts tagged: {{ page.tag }}</h1>
+    {% for post in site.tags[page.tag] %}
+    <article class="post">
+        <h2><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2>
+        <div class="post-meta">
+            <span class="post-date">{{ post.date | date: "%B %e, %Y" }}</span>
+        </div>
+    </article>
+    {% endfor %}
+</div>

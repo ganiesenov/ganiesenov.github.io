@@ -1,15 +1,49 @@
+# Site settings
 title: Study and Blog
 description: Self-study and blog every day
 author: Gani
 
-# Social links (если нужно)
+# Social links
+email: your-email@example.com
 github_username: ganiesenov
 linkedin_username: your-linkedin
+twitter_username: your-twitter
+youtube_username: your-youtube
 
 # Build settings
 markdown: kramdown
-permalink: /:title/
 paginate: 6
+paginate_path: "/page/:num/"
 
-# Уберите эту строку:
-# theme: minima
+# URLs
+permalink: /:year/:month/:day/:title/
+tag_page_layout: tag
+tag_page_dir: tags
+
+# Collections (если понадобятся)
+collections:
+  projects:
+    output: true
+    permalink: /projects/:path/
+
+# Defaults
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+
+# Exclude files
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor

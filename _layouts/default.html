@@ -2,34 +2,41 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>{{ site.title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
     <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 <body>
-    <header class="wrapper-masthead">
+    <div class="wrapper-masthead">
         <div class="container">
-            <div class="site-info">
-                <h1 class="site-name"><a href="/">{{ site.title }}</a></h1>
-                <p class="site-description">{{ site.description }}</p>
+            <div class="header-wrapper">
+                <div class="site-info">
+                    <img src="/assets/images/site_img/simon.jpg" alt="avatar" class="site-logo">
+                    <div class="site-text">
+                        <h1 class="site-name"><a href="/">Study and Blog</a></h1>
+                        <p class="site-description">Self-study and blog every day</p>
+                    </div>
+                </div>
+                
+                <nav class="main-nav">
+                    <a href="/">Home</a>
+                    <a href="/projects">Projects</a>
+                    <a href="/about">About</a>
+                </nav>
             </div>
-            <nav>
-                <a href="/">Home</a>
-                <a href="/about">About</a>
-                <a href="/projects">Projects</a>
-            </nav>
         </div>
-    </header>
+    </div>
 
     <div class="wrapper-main">
         <div class="container">
             {{ content }}
         </div>
     </div>
+    <div class="read-more">
+        <a href="#" class="read-more-link">READ MORE</a>
+    </div>
 
-    <footer>
-        <div class="container">
-            <p>&copy; {{ site.time | date: '%Y' }} {{ site.author }}</p>
-        </div>
-    </footer>
+    {% include pagination.html %}
+    {% include footer.html %}
 </body>
 </html>
