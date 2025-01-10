@@ -1,1 +1,0 @@
-# ganiesenov.github.io
