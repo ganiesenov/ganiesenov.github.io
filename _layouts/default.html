@@ -29,14 +29,75 @@
 
     <div class="wrapper-main">
         <div class="container">
-            {{ content }}
+            {% if page.url == "/" %}
+                {% for post in site.posts %}
+                    <article class="post-summary">
+                        <h2 class="post-title">
+                            <a href="{{ post.url }}">{{ post.title }}</a>
+                        </h2>
+                        
+                        <div class="post-meta">
+                            <span class="post-date">{{ post.date | date: "%B %-d, %Y" }}</span>
+                        </div>
+
+                        {% if post.summary %}
+                            <div class="post-summary-content">
+                                <h3>A quick summary of today:</h3>
+                                {{ post.summary | markdownify }}
+                            </div>
+                        {% endif %}
+
+                        <div class="read-more">
+                            <a href="{{ post.url }}" class="read-more-link">READ MORE</a>
+                        </div>
+                    </article>
+                {% endfor %}
+            {% else %}
+                {{ content }}
+            {% endif %}
         </div>
     </div>
-    <div class="read-more">
-        <a href="#" class="read-more-link">READ MORE</a>
-    </div>
 
-    {% include pagination.html %}
     {% include footer.html %}
+
+    <style>
+        .post-summary {
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .post-title {
+            margin: 0 0 1rem;
+            font-size: 1.8rem;
+        }
+
+        .post-meta {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .post-summary-content {
+            margin: 1.5rem 0;
+        }
+
+        .post-summary-content h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .read-more-link {
+            display: inline-block;
+            color: #2196F3;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .read-more-link:hover {
+            text-decoration: underline;
+        }
+    </style>
 </body>
 </html>
