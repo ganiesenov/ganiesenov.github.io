@@ -238,15 +238,25 @@ nav a:hover {
     margin: 20px auto;
 }
 .entry {
-    text-align: center;
     max-width: 740px;
     margin: 0 auto;
 }
+
 .entry h1, .entry h2, .entry h3 {
     text-align: center;
     font-size: 32px;
     color: #333;
     margin: 30px 0;
+}
+.entry p {
+    text-align: left; /* Explicitly set paragraph text to left alignment */
+    line-height: 1.6;
+    margin-bottom: 1.5em;
+}
+.entry ul {
+    text-align: left;
+    margin: 0 auto;
+    padding-left: 20px; /* Add some padding for better readability */
 }
 
 .quick-summary {
@@ -353,4 +363,21 @@ nav a:hover {
 
 .posts-by-tag .post:last-child {
     border-bottom: none;
+}
+
+.post-card {
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.post-summary {
+    margin: 1.5rem 0;
+}
+
+.post-summary ul {
+    list-style-type: disc;
+    margin-left: 1.5rem;
 }
